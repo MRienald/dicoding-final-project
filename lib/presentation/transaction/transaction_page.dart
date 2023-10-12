@@ -44,7 +44,7 @@ class TransactionPage extends StatelessWidget {
                   children: [
                     CardSaldo(
                       showSaldobutton: false,
-                      controller: controller,
+                      nominal: controller.authController.balance,
                     ),
                     SizedBox(height: 3.h,),
                     Text(

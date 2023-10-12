@@ -1,16 +1,25 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:nutech_flutter_apps/resources/resources.dart';
 import 'package:sizer/sizer.dart';
 
-class CardSaldo extends StatelessWidget {
-  const CardSaldo({
+class CardSaldo extends StatefulWidget {
+  CardSaldo({
     Key? key,
-    required this.showSaldobutton, this.controller,
+    required this.showSaldobutton,
+    required this.nominal,
   }) : super(key: key);
 
-  final controller;
   final bool? showSaldobutton;
+  String nominal;
 
+  @override
+  State<CardSaldo> createState() => _CardSaldoState();
+}
+
+class _CardSaldoState extends State<CardSaldo> {
+  bool showNominal = false;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -41,7 +50,7 @@ class CardSaldo extends StatelessWidget {
               ),
               SizedBox(height: 1.h,),
               Text(
-                (controller.shownominal || showSaldobutton == false) ? "Rp ${controller.authController.balance}" : "Rp •••••••" ,
+                (showNominal || widget.showSaldobutton == false) ? "Rp ${widget.nominal}" : "Rp •••••••" ,
                 style: TextStyle(
                   fontSize: 8.w,
                   fontWeight: FontWeight.w700,
@@ -49,10 +58,12 @@ class CardSaldo extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 3.h,),
-              (showSaldobutton ?? false)
+              (widget.showSaldobutton ?? false)
               ? InkWell(
                   onTap: () {
-                    controller.changeViewSaldo();
+                    setState(() {
+                      showNominal = !showNominal;
+                    });
                   },
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -66,7 +77,7 @@ class CardSaldo extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 2.w,),
-                      (controller.shownominal)
+                      (showNominal)
                       ? Icon(
                           Icons.visibility_outlined,
                           size: (3.5).w,

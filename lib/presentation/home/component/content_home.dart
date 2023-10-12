@@ -40,7 +40,10 @@ class ContentHome extends StatelessWidget {
             ),
           ),
           SizedBox(height: 3.h,),
-          CardSaldo(showSaldobutton: true, controller : controller),
+          CardSaldo(
+            showSaldobutton: true,
+            nominal: controller.authController.balance,
+          ),
           SizedBox(height: 2.h,),
           MenuItems(controller : controller),
         ],
