@@ -127,6 +127,7 @@ class AuthController extends GetxController {
           token: token
         );
       }).handleError((onError){
+        signOut();
         debugPrint("error : " + onError.toString());
         return throw onError;
       })

@@ -32,6 +32,7 @@ dependencies:
   flutter_image_compress: ^2.0.0
   flutter_custom_dialog: ^1.3.0
   http_parser: ^4.0.2
+  device_preview: ^1.1.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -57,4 +58,14 @@ flutter:
         - asset: lib/resources/fonts/avenir_heavy.ttf
           weight: 700
         - asset: lib/resources/fonts/avenir_roman.otf
+          weight: 900
+    - family : opensans
+      fonts:
+        - asset: lib/resources/fonts/open_sans_medium.ttf
+          weight: 400
+        - asset: lib/resources/fonts/open_sans_regular.ttf
+          weight: 500
+        - asset: lib/resources/fonts/open_sans_heavy.ttf
+          weight: 700
+        - asset: lib/resources/fonts/open_sans_extra_heavy.ttf
           weight: 900

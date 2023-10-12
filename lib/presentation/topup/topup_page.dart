@@ -42,7 +42,6 @@ class TopUpPage extends StatelessWidget {
                   children: [
                     CardSaldo(
                       showSaldobutton: false,
-                      widthCard: double.infinity,
                       controller: controller,
                     ),
                     SizedBox(height: 5.h,),

@@ -13,8 +13,8 @@ mixin ModalDialog {
     controller,
   ) {
     return YYDialog().build(context)
-      ..width = 70.w
-      ..height = 32.h
+      ..width = MediaQuery.of(context).size.width * 0.8
+      ..height = MediaQuery.of(context).size.height * ((MediaQuery.of(context).size.height > 750) ? 0.35 : (MediaQuery.of(context).size.height < 700) ? 0.47 : 0.42)
       ..backgroundColor = AppColors.background1.withOpacity(0.8)
       ..borderRadius = 10.0
       ..showCallBack = () {
@@ -28,7 +28,7 @@ mixin ModalDialog {
         child: Text(
           "Tambah Gambar",
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 24,
             fontWeight: FontWeight.w700,
             color: Colors.black,
           ),
@@ -44,7 +44,7 @@ mixin ModalDialog {
           "Silahkan tambahkan gambar melalui Gallery atau ambil gambar baru dengan Camera!",
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize:14,
+            fontSize: 18,
             fontWeight: FontWeight.w400,
             color: Colors.black,
           ),
@@ -122,8 +122,8 @@ mixin ModalDialog {
     }
   ) {
     return YYDialog().build(context)
-      ..width = 85.w
-      ..height = 35.h
+      ..width = MediaQuery.of(context).size.width * 0.9
+      ..height = MediaQuery.of(context).size.height * ((MediaQuery.of(context).size.height > 750) ? 0.36 : 0.44)
       ..backgroundColor = AppColors.background1.withOpacity(0.9)
       ..borderRadius = 10.0
       ..showCallBack = () {
@@ -133,7 +133,7 @@ mixin ModalDialog {
         print("dismissCallBack invoke");
       }
       ..widget(Padding(
-        padding: EdgeInsets.only(top: 5.w),
+        padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height > 750) ? 5.w : 8.w),
         child: Image.asset(
           AppImages.icError.path,
           width: 18.w,
@@ -239,8 +239,8 @@ mixin ModalDialog {
     }
   ) {
     return YYDialog().build(context)
-      ..width = 85.w
-      ..height = 41.h
+      ..width = MediaQuery.of(context).size.width * 0.9
+      ..height = MediaQuery.of(context).size.height * ((MediaQuery.of(context).size.height > 750) ? 0.42 : 0.55)
       ..backgroundColor = AppColors.background1.withOpacity(opacity ?? 0.9)
       ..borderRadius = 10.0
       ..barrierDismissible = false
@@ -356,8 +356,8 @@ mixin ModalDialog {
     }
   ) {
     return YYDialog().build(context)
-      ..width = 85.w
-      ..height = 35.h
+      ..width = MediaQuery.of(context).size.width * 0.9
+      ..height = MediaQuery.of(context).size.height * ((MediaQuery.of(context).size.height > 750) ? 0.36 : 0.46)
       ..backgroundColor = AppColors.background1.withOpacity(0.9)
       ..borderRadius = 10.0
       ..barrierDismissible = false
@@ -368,7 +368,7 @@ mixin ModalDialog {
         print("dismissCallBack invoke");
       }
       ..widget(Padding(
-        padding: EdgeInsets.only(top: 5.w),
+        padding: EdgeInsets.only(top: (MediaQuery.of(context).size.height > 750) ? 5.w : 10.w),
         child: Image.asset(
           AppImages.icSuccess.path,
           width: 18.w,

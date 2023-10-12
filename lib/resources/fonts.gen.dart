@@ -12,4 +12,7 @@ class FontFamily {
 
   /// Font family: avenir
   static const String avenir = 'avenir';
+
+  /// Font family: opensans
+  static const String opensans = 'opensans';
 }

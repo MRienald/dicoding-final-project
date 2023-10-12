@@ -5,24 +5,27 @@ import 'package:sizer/sizer.dart';
 class CardSaldo extends StatelessWidget {
   const CardSaldo({
     Key? key,
-    required this.showSaldobutton, this.widthCard, this.controller,
+    required this.showSaldobutton, this.controller,
   }) : super(key: key);
 
   final controller;
   final bool? showSaldobutton;
-  final double? widthCard;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.center,
       children: [
-        Image.asset(
-          AppImages.backgroundSaldo.path,
-          width: widthCard,
+        Container(
+          height: MediaQuery.of(context).size.height * 0.2,
+          width: MediaQuery.of(context).size.width * 0.9,
+          decoration: BoxDecoration(
+            color: AppColors.redCard,
+            borderRadius: BorderRadius.circular(10)
+          ),
         ),
         Container(
           width: double.infinity,
-          height: 20.h,
           padding: EdgeInsets.symmetric(vertical: 3.h, horizontal: 5.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

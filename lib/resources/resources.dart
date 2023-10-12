@@ -12,6 +12,7 @@ class AppColors {
   static const green = Color(0xff8cd36c);
   static const yellow = Color(0xffffd450);
   static const red = Color(0xfff52323);
+  static const redCard = Color(0xffDE3429);
 
   static const chipBg = Color(0xfff9fcff);
   static const greenUP = Color(0xff14C501);
